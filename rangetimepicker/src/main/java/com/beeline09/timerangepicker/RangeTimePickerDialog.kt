@@ -79,30 +79,10 @@ class RangeTimePickerDialog : DialogFragment() {
         fun onSelectedTime(hourStart: Int, minuteStart: Int, hourEnd: Int, minuteEnd: Int)
     }
 
-    fun newInstance(): RangeTimePickerDialog {
-        return RangeTimePickerDialog()
-    }
+
 
     private var mCallback: ISelectedTime? = null
-    /**
-     * Create a new instance with own attributes (All color MUST BE in this format "R.color.my_color")
-     *
-     * @param colorBackgroundHeader Color of Background header dialog and timePicker
-     * @param colorTabUnselected    Color of tab when unselected
-     * @param colorTabSelected      Color of tab when selected
-     * @param colorTextButton       Text color of button
-     * @param is24HourView          Indicates if the format should be 24 hours
-     */
-    fun newInstance(colorBackgroundHeader: Int, colorTabUnselected: Int, colorTabSelected: Int, colorTextButton: Int, is24HourView: Boolean): RangeTimePickerDialog {
-        val f = RangeTimePickerDialog()
-        this.colorTabUnselected = colorTabUnselected
-        this.colorBackgroundHeader = colorBackgroundHeader
-        colorBackgroundTimePickerHeader = colorBackgroundHeader
-        this.colorTabSelected = colorTabSelected
-        this.colorTextButton = colorTextButton
-        this.is24HourView = is24HourView
-        return f
-    }
+
 
 
     @Suppress("DEPRECATION")
@@ -664,5 +644,30 @@ class RangeTimePickerDialog : DialogFragment() {
         var MINUTE_START = "minuteStart"
         var HOUR_END = "hourEnd"
         var MINUTE_END = "minuteEnd"
+
+        fun newInstance(): RangeTimePickerDialog {
+            return RangeTimePickerDialog()
+        }
+
+        /**
+         * Create a new instance with own attributes (All color MUST BE in this format "R.color.my_color")
+         *
+         * @param colorBackgroundHeader Color of Background header dialog and timePicker
+         * @param colorTabUnselected    Color of tab when unselected
+         * @param colorTabSelected      Color of tab when selected
+         * @param colorTextButton       Text color of button
+         * @param is24HourView          Indicates if the format should be 24 hours
+         */
+        fun newInstance(colorBackgroundHeader: Int, colorTabUnselected: Int, colorTabSelected: Int, colorTextButton: Int, is24HourView: Boolean): RangeTimePickerDialog {
+            val f = RangeTimePickerDialog()
+            f.colorTabUnselected = colorTabUnselected
+            f.colorBackgroundHeader = colorBackgroundHeader
+            f.colorBackgroundTimePickerHeader = colorBackgroundHeader
+            f.colorTabSelected = colorTabSelected
+            f.colorTextButton = colorTextButton
+            f.is24HourView = is24HourView
+            return f
+        }
+
     }
 }

@@ -15,7 +15,7 @@ ext {
     siteUrl = 'https://github.com/beeline09/Range-Time-Picker-Dialog'
     gitUrl = 'https://github.com/beeline09/Range-Time-Picker-Dialog.git'
 
-    libraryVersion = '1.0.2'
+    libraryVersion = '1.0.3'
 
     developerId = 'beeline09'
     developerName = 'Rasul Ismailov'
