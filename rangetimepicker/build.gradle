@@ -1,0 +1,61 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+ext {
+    bintrayRepo = 'timerangepicker'
+    bintrayName = 'timerangepicker'
+
+    publishedGroupId = 'com.github.beeline09'
+    libraryName = 'com.beeline09.RangeTimePickerDialog'
+    artifact = 'timerangepicker'
+
+    libraryDescription = ' Range Time Picker is an android widget for selecting time range quickly and easily, following Material Design principle.'
+
+    siteUrl = 'https://github.com/beeline09/Range-Time-Picker-Dialog'
+    gitUrl = 'https://github.com/beeline09/Range-Time-Picker-Dialog.git'
+
+    libraryVersion = '1.0.2'
+
+    developerId = 'beeline09'
+    developerName = 'Rasul Ismailov'
+    developerEmail = 'beeline09@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'https://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.1"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation "com.google.android.material:material:1.2.0-alpha01"
+}
+
+// Place it at the end of the file
+apply from: 'https://gist.githubusercontent.com/beeline09/8d801a35b39a43e8c46d3e624588360b/raw/57185f5c2d7b38706e2b7ca03d5f7fc31465c350/installv1.gradle'
+apply from: 'https://gist.githubusercontent.com/beeline09/b360f8daae79b887cb78c65511e8b8e8/raw/4a78cba44c72d53991848b27108c25209b58e149/bintrayv1.gradle'
