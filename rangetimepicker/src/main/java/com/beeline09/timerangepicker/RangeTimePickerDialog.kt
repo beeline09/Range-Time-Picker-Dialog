@@ -333,6 +333,16 @@ class RangeTimePickerDialog : DialogFragment() {
     }
 
     /**
+     * Set listener
+     *
+     * @param mCallback (eg. R.color.my_color)
+     */
+    fun setListener(listener: ISelectedTime) {
+        this.mCallback = listener
+    }
+
+
+    /**
      * Set color of tab item when it is unselected
      *
      * @param colorTabUnselected (eg. R.color.my_color)
@@ -645,8 +655,11 @@ class RangeTimePickerDialog : DialogFragment() {
         var HOUR_END = "hourEnd"
         var MINUTE_END = "minuteEnd"
 
-        fun newInstance(): RangeTimePickerDialog {
-            return RangeTimePickerDialog()
+        fun newInstance(is24HourEnabled:Boolean, listener: ISelectedTime): RangeTimePickerDialog {
+            val f =RangeTimePickerDialog()
+            f.is24HourView = is24HourEnabled
+            f.mCallback = listener
+            return f
         }
 
         /**
